@@ -12,14 +12,11 @@ class OrderManager(BaseManager):
         is_completed = False
         price = data.get("cart").total_price
         payment_type = data.get("payment_type")
-        quantity = data.get("quantity", 1)
+        quantity = data.get("cart"). product_number_in_cart
 
 
 
-        if payment_type == PAYMENTTypeChoices.ONLINE:
-            is_paid = True
-            is_completed = True
-            user.create_balance(-price)
+
 
 
 
@@ -29,5 +26,7 @@ class OrderManager(BaseManager):
             is_paid=is_paid,
             is_completed=is_completed,
             order_number=generate_random_string(),
+            quantity=quantity,
+            payment_type=payment_type
             **data
         )
