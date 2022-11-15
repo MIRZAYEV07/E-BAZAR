@@ -61,6 +61,7 @@ LOCAL_APPS = [
     "main.apps.common.apps.CommonConfig",
     "main.apps.category.apps.CategoryConfig",
     "main.apps.product.apps.ProductConfig",
+    "main.apps.cart.apps.CartConfig",
 
 
 ]
@@ -141,8 +142,12 @@ SIMPLE_JWT = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ebazar_database',
+        'USER': 'ebazar_user',
+        "PASSWORD": 'reTRcHFMKDFG234sdfSDF36AyzQ4',
+        "HOST": 'localhost',
+        "PORT": 5432
     }
 }
 
