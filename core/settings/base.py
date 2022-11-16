@@ -63,6 +63,8 @@ LOCAL_APPS = [
     "main.apps.product.apps.ProductConfig",
     "main.apps.cart.apps.CartConfig",
     "main.apps.order.apps.OrderConfig",
+    "main.apps.order.payment.PaymentConfig",
+
 
 
 ]
