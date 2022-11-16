@@ -229,3 +229,20 @@ CORS_ALLOW_METHODS = [
     "PUT",
 ]
 CORS_ALLOW_ALL_ORIGINS = True
+
+PAYME_SETTINGS = {
+    "KASSA_ID": '6229ec614fed152a1068002a',  # token
+    # TODO: TOKEN key was not declared in the docs, find out and remove if needed
+    "TOKEN": os.environ.get("MERCHANT_ID"),  # token
+    "SECRET_KEY": os.environ.get("MERCHANT_SECRET_KEY"),  # password
+    "ACCOUNTS": {"KEY": "order_id"},
+}
+
+PAYME_PRICE_HELPER = 100
+
+CLICK_SETTINGS = {
+    "service_id": os.environ.get("CLICK_SERVICE_ID"),
+    "merchant_id": os.environ.get("CLICK_MERCHANT_ID"),
+    "merchant_user_id": os.environ.get("CLICK_MERCHANT_USER_ID"),
+    "secret_key": os.environ.get("CLICK_SECRET_KEY"),
+}
